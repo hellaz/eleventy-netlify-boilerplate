@@ -5,12 +5,50 @@
   <title>{{ renderData.title or title or metadata.title }}</title>
   <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="icon" type="image/png" href="assets/images/ico/favicon.png" />
+
+  <meta name="title" content={{ renderData.title or title or metadata.title }}">
+  <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
+  <meta name="keywords" content="Web, Grid, Mesh, Network, Cloud, Site, developer, architect, startup, admin, user, δίκτυο, ιστός, ιστοχώρος, ιστοσελίδα, διαχειριστ΄ης, σύννεφο, αρχιτέκτονας, προγραμματιστής, χρήστης, recommendations, offers, propose ">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="Greek">
+  <meta name="revisit-after" content="20 days">
+  <meta name="author" content="info@netz.gr">
+  <link rel="canonical" href="https://www.netz.gr" />
+  <link rel="alternate” hreflang=”en” href=”https://www.netz.gr”>
+  <link rel="alternate” hreflang=”el” href=”https://www.netz.gr”>
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.netz.gr/">
+  <meta property="og:title" content="{{ renderData.title or title or metadata.title }}" />
+  <meta property="og:description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}" />
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="netz.gr">
+  <meta property="twitter:url" content="https://www.netz.gr/">
+  <meta name="twitter:title" content="{{ renderData.title or title or metadata.title }}">
+  <meta name="twitter:description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@netzgr" />
+  <meta name="twitter:domain" content="netz.gr" />
+  <meta name="twitter:creator" content="@netzgr" />
+
+
   {% set css %}
-    {% include "assets/css/inline.css" %}
+    {% include "assets/css/plugins.min.css" %}
+    {% include "assets/css/style.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
   {% set js %}
-    {% include "assets/js/inline.js" %}
+    {% include "assets/js/jquery-3.2.1.min.js" %}
+    {% include "assets/js/plugins.js" %}
+    {% include "assets/js/main.js" %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
 </head>
